@@ -1,5 +1,3 @@
-![Angular](https://www.google.com.br/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjm0teq4qvcAhXCo1kKHcbBDaYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pluralsight.com%2Fcodeschool&psig=AOvVaw2gjP1JcrCDFpz_zU8tLFSp&ust=1532110445793036)
-
 # Pesquisa de videos do YouTube
 
 Aplicação SPA (Single Page Application);
