@@ -1,0 +1,78 @@
+<html ng-app="pesquisaVideosYoutube">
+
+<head>
+    <title>Pesquisa Vidoes no YouTube</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-locale_pt-br.js"></script>
+    <script src="lib/paginacao/paginacao.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/pesquisaVideosYoutubeCtrl.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="lib/font-awesome/fontawesome.min.js">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+
+<body ng-controller="pesquisaVideosYoutubeCtrl">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-5 h1">
+                {{app}}
+                <span class="fab fa-youtube"></span>
+                YouTube
+            </h1>
+            <p class="p">{{appDescricao}} <span class="fab fa-angular"> </span> Angular.</p>
+            <div class="input-group">
+                <input type="text" id="pesq_titulo" ng-model="titulo" class="form-control" placeholder="Buscar por ...">
+                <span class="input-group-btn">
+                    <button class="btn " ng-click="carregarVideos()" type="button"><span class="fas fa-search"></span> Buscar</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="container" ng-show="videos.length > 0">
+        <div class="row" dir-paginate="video in videos | itemsPerPage:10">
+            <div class="col-xs-6 col-md-4">
+                <hr>
+                    <p class="titulo-video">{{video.titulo}}</p>
+                <hr>
+                <p class="descricao">Descrição:</p>
+                <p class="descricao-texto">{{video.descricao}}</p>
+                <p>
+                    <a class="btn btn-danger" href="https://www.youtube.com/watch?v={{video.id}}" role="button" target="blank">
+                        Veja no <span class="fab fa-youtube"></span> YouTube
+                        
+                    </a>
+                </p>
+                
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <iframe class="iframe" src="{{trustSrcurl(video.url)}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-xs-1 text-center ">
+                <dir-pagination-controls></dir-pagination-controls>
+            </div>
+        </div>
+    </div> 
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <br>
+            <p>
+                <span class="fab fa-facebook-f"></span>
+                <span class="fab fab fa-github"></span>
+                <span class="fab fab fa-linkedin-in"></span>
+            </p> 
+            <p>&copy; Criado por Alax Paulo com <span class="fab fa-angular"></span> AngularJS.</p>
+        </div>
+    </footer>   
+</body>
+</html>

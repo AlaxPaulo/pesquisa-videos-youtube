@@ -1,0 +1,57 @@
+.iframe{
+    height: 50%;
+    width: 100%;
+}
+
+.row{
+    margin-bottom: 20px;
+}
+
+.titulo-video{
+    font-weight: bold;
+}
+
+.descricao{
+    font-weight: bold; 
+    font-size: small;
+}
+
+.descricao-texto{
+    font-weight: normal; 
+    font-size: smaller;
+}
+
+.img{
+    width: 100px;
+    height:100px ;
+}
+.jumbotron{
+    background-color: rgba(19, 18, 18, 0.918);
+}
+
+.h1{
+    color: white; 
+}
+
+.p{
+    color: white;
+}
+
+.footer {
+    position: sticky;
+    bottom:0;
+    width:100%;
+    color: white;
+    background-color: rgba(19, 18, 18, 0.918);
+}
+/* 
+
+.container{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.row-area{
+    margin-bottom:50px;
+} */
